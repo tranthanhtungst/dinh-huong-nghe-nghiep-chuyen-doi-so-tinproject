@@ -144,29 +144,54 @@
     border-radius: 10px;
     margin-bottom: 8px;
 }
-/* ===== SECTION 5: PHẨM CHẤT & KỸ NĂNG ===== */
+
+/* ===== SECTION 5: PHẨM CHẤT & KỸ NĂNG (ĐÃ SỬA) ===== */
 .ai-skills {
-    display: flex;
-    align-items: center;
-
-    min-height: 360px;
-    padding: 40px 60px;
-
-    background-image: url("../images/section5ai.jpg");
-    background-repeat: no-repeat;
-    background-position: right center;   /* ✅ ảnh sang PHẢI */
-    background-size: 42%;               /* ✅ ảnh không quá to */
-
+    /* Đã xóa background-image */
     background-color: #f5f7ff;
+    padding: 40px 60px;
 }
 
-/* Nội dung bên trái */
+/* Container dùng Flexbox để chia 2 cột */
+.ai-skills .skills-container {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: space-between;
+    gap: 30px; /* Khoảng cách giữa chữ và ảnh */
+}
+
+/* Nội dung chữ bên trái */
 .ai-skills .skills-content {
-    width: 50%;              /* ✅ chỉ chiếm nửa trái */
-    max-width: 600px;
+    width: 55%; /* Chiếm phần lớn hơn một chút */
     background: rgba(255,255,255,0.92);
     padding: 28px;
     border-radius: 16px;
+}
+
+/* Khối ảnh bên phải (Vị trí khung đỏ) */
+.ai-skills .skills-image {
+    width: 40%; /* Chiếm 40% bề ngang */
+    display: flex;
+    justify-content: center;
+}
+
+/* Tác động CSS lên ảnh giống như yêu cầu */
+.ai-skills .skills-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px; /* Bo góc nhẹ cho đẹp */
+}
+
+/* Responsive cho mobile của Section 5 */
+@media (max-width: 768px) {
+    .ai-skills .skills-container {
+        flex-direction: column; /* Xếp chồng lên nhau khi màn hình nhỏ */
+    }
+    .ai-skills .skills-content, 
+    .ai-skills .skills-image {
+        width: 100%;
+    }
 }
 
 
@@ -227,7 +252,7 @@
 }
 /* ===== SECTION 7: ĐỊNH HƯỚNG HỌC TẬP ===== */
 #phan7 {
-    background: #c8d3ff;           /* nền xanh nhạt */
+    background: #c8d3ff;            /* nền xanh nhạt */
     
 }
 /* Icon mũi tên đầu dòng */
@@ -238,7 +263,7 @@
 /* Mỗi ý = 1 khối riêng */
 #phan7 li {
     color: #f4f2e4;
-    background: #0a022dc7;           /* nền trắng từng dòng */
+    background: #0a022dc7;            /* nền trắng từng dòng */
     padding: 14px 18px;
     border-radius: 12px;
     margin-bottom: 14px;
@@ -260,4 +285,3 @@
 .job-grid li{
     color: #f6f6ff
 }
-
